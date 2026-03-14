@@ -15,6 +15,7 @@ export interface ListingSummary {
 // Listing detail (for detail page)
 export interface ListingDetail {
   Id: string;
+  InternalId: string;
   Adres: string;
   Postcode: string;
   Plaats: string;

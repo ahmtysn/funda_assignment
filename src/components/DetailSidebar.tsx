@@ -3,7 +3,7 @@ import { formatPrice } from '@/lib/format';
 
 // Server Component - no JS shipped to client
 export function DetailSidebar({ listing }: { listing: ListingDetail }) {
-  const shareUrl = `https://funda.nl/koop/detail/${listing.Id}`;
+  const shareUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/listing/${listing.InternalId}`;
   const shareText = `${listing.Adres}, ${listing.Plaats} - ${formatPrice(listing.Koopprijs)}`;
   const monthlyPayment = Math.round(listing.Koopprijs * 0.004);
 

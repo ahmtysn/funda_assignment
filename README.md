@@ -49,11 +49,11 @@ src/
 │   └── BackButton.tsx      # Browser history back
 │
 ├── lib/
-│   ├── api.ts              # API calls with ISR caching
+│   ├── api.ts              # API calls
 │   └── format.ts           # Price formatting
 │
 ├── styles/
-│   └── globals.scss        # All CSS (mobile-first, BEM)
+│   └── globals.scss        # All CSS (mobile-first)
 │
 └── types/
     └── listing.ts          # TypeScript types
@@ -84,7 +84,7 @@ Each page fetches only 12 items (not all 120 at once):
 /?page=2  →  fetch 12 items (on navigation)
 ```
 
-**Why per-page fetching instead of loading all 120 upfront?**
+**Why per-page fetching instead of loading all 120?**
 - Faster initial load (12 items vs 120)
 - Each page URL is crawlable by Google (`/?page=3` returns page 3 content)
 - Cache: same page requested by different users is served from cache
@@ -144,5 +144,4 @@ FUNDA_API_BASE_URL=https://partnerapi.funda.nl/feeds/Aanbod.svc/json
 
 - Search by city
 - Filter by price/rooms
-- Save favorites
 - Loading skeleton
